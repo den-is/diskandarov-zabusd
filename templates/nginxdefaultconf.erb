@@ -1,0 +1,33 @@
+server {
+	listen			80 default;
+	server_name		_;
+	access_log		/var/log/nginx/zabbix.log main;
+	error_log		/var/log/nginx/zabbix.error;
+	root			/usr/share/zabbix;
+	index			index.php index.html index.htm;
+	client_max_body_size		5m;
+	client_body_buffer_size		128k;
+
+	location ~ [^/]\.php(/|$) {
+		fastcgi_index  index.php;
+		try_files $uri =404;
+		fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+		fastcgi_pass   127.0.0.1:9000;
+		fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		include        fastcgi_params;
+	}
+
+	location ~*  \.(jpg|jpeg|png|gif|css|js|ico)$ {
+		expires max;
+		log_not_found off;
+	}
+
+	location ~ /\.ht {
+		deny  all;
+	}
+
+	location ~ /\. {
+		deny all;
+	}
+}
+

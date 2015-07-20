@@ -1,0 +1,16 @@
+{
+  "name": "diskandarov-zabusd",
+  "version": "0.1.0",
+  "author": "Denis Iskandarov",
+  "summary": "Module setup minimal CentOS 7 environment for running Zabbix monitoring system and monitoring USD sell rate on TBC bank's web page.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/den-is/diskandarov-zabusd",
+  "project_page": "https://github.com/den-is/diskandarov-zabusd",
+  "issues_url": "https://github.com/den-is/diskandarov-zabusd/issues",
+  "dependencies": [
+    { "name": "puppetlabs-stdlib", "version_requirement":" >= 1.0.0" },
+    { "name": "puppetlabs-mysql", "version_requirement": ">= 3.4.0" },
+    { "name": "stankevich-python", "version_requirement": ">= 1.9.5" },
+  ]
+}
+
