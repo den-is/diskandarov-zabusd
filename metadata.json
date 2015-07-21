@@ -10,6 +10,7 @@
   "dependencies": [
     { "name": "puppetlabs-stdlib", "version_requirement":" >= 1.0.0" },
     { "name": "puppetlabs-mysql", "version_requirement": ">= 3.4.0" },
+    { "name": "jfryman-selinux", "version_requirement": ">= 3.4.0" },
     { "name": "stankevich-python", "version_requirement": ">= 1.9.5" },
   ]
 }

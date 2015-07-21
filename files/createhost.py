@@ -49,6 +49,7 @@ def hostexists(hostname, url):
     else:
         return False
 
+
 def createhost(host, url):
     r = requests.post(url, json=host)
     result = json.loads(r.text)
@@ -59,6 +60,7 @@ def createitem(item, hostid, url):
     r = requests.post(url, json=item)
     result = json.loads(r.text)
     return result.get('result',0).get('itemids',0)[0]
+
 
 if __name__ == '__main__':
 
